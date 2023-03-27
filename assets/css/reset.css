@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+* { 
+	vertical-align: baseline; 
+	border: 0 none; 
+	outline: 0; 
+	padding: 0; 
+	margin: 0;
+}
+body {
+	margin :0px; 
+	background: #FFFFFF; 
+	font-family: 'Raleway', sans-serif; 
+	font-size:14px; 
+	color:#333; 
+	text-decoration:none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+html { 
+	width: 100%; 
+	height: 100%; 
+	position: relative;
+}
+ol, ul, li {
+	list-style: none;
+	list-style-type: none;
+	padding: 0; 
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p, form {
+	margin: 0;
+}
+a {
+	outline:none;
+	text-decoration:none;
+}

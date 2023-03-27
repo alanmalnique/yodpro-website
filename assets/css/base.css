@@ -1,0 +1,526 @@
+@charset "utf-8";
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.loader {
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+.loader > img {
+    max-width: 100px;
+    animation: fade 1s linear;
+    animation-iteration-count: infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+@keyframes fade {
+  0%,100% { opacity: 0 }
+  50% { opacity: 1 }
+}
+
+body > .menu {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    background: #FFFFFF;
+    z-index: 10;
+    width: 100%;
+    height: 100vh;
+    transition: .5s;
+}
+body > .menu.open {
+    left: 0;
+}
+
+body > .menu > a {
+    text-indent: -10000000px;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 30px;
+    color: #000000;
+}
+body > .menu > ul {
+    max-width: 320px;
+    margin:20px auto;
+}
+body > .menu > ul > li {
+    display: block;
+    padding: 20px 0;
+    font-size: 18px;
+    color: #666666;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    cursor: pointer;
+}
+body > .menu > ul > li:hover {
+    font-weight: 700;
+}
+body > .menu > ul > li:last-child {
+    border-bottom: none;
+}
+
+header {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+}
+header > .white {
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    background: url(../images/header-white.png) no-repeat center center / contain;
+    width: 100%;
+    z-index: 2;
+}
+header > .white > img {
+    opacity: 0;
+}
+header > .top {
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+header > .top > img {
+    width: 83px;
+    height: 47px;
+    align-self: center;
+}
+header > .top > .menu {
+    margin-left: auto;
+    cursor: pointer;
+    display: flex;
+    align-self: center;
+}
+header > .top > .menu > .text {
+    color: #ffffff;
+    font-size: 17px;
+}
+header > .top > .menu > .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 30px;
+    margin-left: 20px;
+}
+header > .top > .menu > .hamburger > div {
+    width: 37px;
+    height: 6px;
+    border-radius:5px;
+    background: #FFFFFF;
+    margin-bottom: 4px;
+    position: relative;
+    -webkit-transition: right 0.3s ease; 
+    -moz-transition: right 0.3s ease; 
+    -o-transition: right 0.3s ease; 
+    transition: right 0.3s ease;
+}
+header > .top > .menu > .hamburger > div:nth-child(2) {
+    right: 10px;
+}
+header > .top > .menu:hover > .hamburger > div:nth-child(2) {
+    right: 0;
+}
+header .header-slider > .item {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+header .header-slider > .item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(52,57,149);
+    background: linear-gradient(130deg, rgba(52,57,149,0.95) 0%, rgba(112,39,254,0.95) 60%);
+}
+header .header-slider > .item > .caption {
+    position: absolute;
+    z-index: 4;
+    top: 40%;
+    left: 100px;
+    max-width: calc(100% - 200px);
+    transform: translateY(-50%);
+    overflow: hidden;
+}
+header .header-slider > .item > .caption h1 {
+    font-size: 30px;
+    color: #FFFFFF;
+    opacity: 0;
+}
+header .header-slider > .item > .caption h2 {
+    font-size: 90px;
+    color: #30f7fe;
+    opacity: 0;
+}
+header .header-slider > .item > .caption h3 {
+    font-size: 17px;
+    font-weight: 400;
+    color: #FFFFFF;
+    max-width: 75%;
+    opacity: 0;
+}
+header .header-slider > .item > .caption > a {
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFFFFF;
+    margin-top: 70px;
+    position: relative;
+    float: left;
+    opacity: 0;
+}
+header .header-slider > .item > .caption > a::after {
+    content: "";
+    width: 40px;
+    height: 1px;
+    background: #ffffff;
+    position: absolute;
+    top: 50%;
+    right: -55px;
+    margin-top: 2px;
+}
+.bx-controls > .bx-controls-direction > a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff url(../images/arrow.png) no-repeat center center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+.bx-controls > .bx-controls-direction > a.disabled {
+    display: none;
+}
+.bx-controls > .bx-controls-direction > a:hover {
+    opacity: .6;
+}
+.bx-controls > .bx-controls-direction > .bx-next {
+    right: 20px;
+}
+.bx-controls > .bx-controls-direction > .bx-prev {
+    left: 20px;
+    transform: rotate(180deg);
+}
+
+.services {
+    padding-bottom: 50px;
+}
+.services > .title {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 50px;
+    color: #000000;
+    margin-bottom: 50px;
+}
+.services > .title::after {
+    content: "";
+    width: 80px;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.services .services-carousel > .item {
+    padding-top: 120px;
+    background: url('../images/icon-services.png') no-repeat center top;
+    text-align: center;
+}
+.services .bx-controls > .bx-pager {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.services .bx-controls .bx-pager-item > a {
+    width: 10px;
+    height: 10px;
+    text-indent: -10000000px;
+    background: #582fd7;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: block;
+    border: 3px solid #FFFFFF;
+}
+.services .bx-controls .bx-pager-item > a.active {
+    background: #FFFFFF;
+    border: 3px solid #CCCCCC;
+}
+
+.why {
+    position: relative;
+    padding: 50px 20px;
+}
+.why::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: url('../images/computer.png') no-repeat center center / contain;
+}
+.why > .text {
+    width: 50%;
+    position: relative;
+    left: 50%;
+    top: 0px;
+}
+.why > .text > .title {
+    display: block;
+    position: relative;
+    padding-bottom: 10px;
+    font-size: 50px;
+    color: #000000;
+    margin-bottom: 50px;
+}
+.why > .text > .title::after {
+    content: "";
+    width: 80px;
+    height: 1px;
+    background: #000000;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.why > .text > p {
+    font-size: 17px;
+    line-height: 25px;
+    margin-bottom: 30px;
+}
+.why > .text > p:last-child {
+    margin-bottom: 0;
+}
+
+.advantages {
+    display: block;
+    margin-top: 50px;
+    width: 100%;
+    padding: 100px 0;
+    background: #f7f7f7;
+    position: relative;
+}
+.advantages .advantages-slider > .item {
+    text-align: center;
+}
+.advantages .advantages-slider > .item > img {
+    max-width: 150px;
+}
+.advantages .advantages-slider > .item > .title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 30px 0;
+}
+.advantages .advantages-slider > .item > p {
+    font-size: 17px;
+}
+.contact {
+    display: block;
+    width: 100%;
+    position: relative;
+}
+.contact::before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: #582fd7;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.contact::after {
+    content: "";
+    width: 50%;
+    height: 100%;
+    background: url('../images/contact-background.jpg') no-repeat left center / cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.contact > .container {
+    position: relative;
+    z-index: 2;
+    padding: 50px 20px;
+}
+.contact > .container > .title {
+    font-size: 50px;
+    color: #FFFFFF;
+    display: block;
+    margin-bottom: 50px;
+}
+.contact > .container > form > ul {
+    max-width: calc(50% - 40px);
+}
+.contact > .container > form > ul > li {
+    position: relative;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+.contact > .container > form > ul > li:last-child {
+    margin-bottom: 0;
+}
+.contact > .container > form > ul > li.button {
+    background: #FFFFFF;
+    margin-top: 50px;
+    max-width: 100px;
+    text-align: center;
+    padding: 15px 30px;
+    font-size: 17px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    opacity: 1;
+}
+.contact > .container > form > ul > li.button:hover {
+    opacity: .5;
+}
+.contact > .container > form > ul > li > input {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #FFF;
+    font-size: 17px;
+    color: #FFFFFF;
+    transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-appearance:none;
+    background: transparent;
+    height: 40px;
+}
+.contact > .container > form > ul > li.error > input {
+    border-bottom: 1px solid #D22B2B;
+}
+.contact > .container > form > ul > li > input::placeholder {
+    color: transparent;
+}
+.contact > .container > form > ul > li > label {
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 17px;
+    color: #FFFFFF;
+    cursor: text;
+    margin-top: 23px;
+    trransition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+}
+.contact > .container > form > ul > li > input:focus + label, .contact > .container > form > ul > li > input:not(:placeholder-shown) + label {
+    margin: 0;
+}
+
+footer {
+    display: block;
+    width: 100%;
+    padding: 50px 0;
+    background: #1b1b1b;
+}
+footer > .container {
+    display: flex;
+}
+footer > .container .title {
+    display: block;
+    font-size: 40px;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+footer > .container > .text {
+    margin-right: 40px;
+    max-width: 60%;
+}
+footer > .container > .text > p {
+    font-size: 17px;
+    color: #FFFFFF;
+    line-height: 25px;
+}
+footer > .container > .location {
+    margin-left: auto;
+}
+footer > .container > .location > ul > li {
+    display: block;
+    font-size: 17px;
+    color: #FFFFFF;
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+footer > .container > .location > ul > li:nth-child(1) {
+    background: url('../images/location.png') no-repeat left center;
+}
+footer > .container > .location > ul > li:nth-child(2) {
+    background: url('../images/phone.png') no-repeat left center;
+}
+footer > .container > .location > ul > li:nth-child(3) {
+    background: url('../images/mail.png') no-repeat left center;
+}
+footer > .container > .location > .social {
+    display: flex;
+    flex-direction: row;
+}
+footer > .container > .location > .social > a {
+    width: 46px;
+    height: 46px;
+    background: url('../images/social.png') no-repeat;
+    text-indent: -10000000px;
+    margin-right: 10px;
+    trransition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+}
+footer > .container > .location > .social > a:last-child {
+    margin-right: 0;
+}
+footer > .container > .location > .social > a:nth-child(1) {
+    background-position: left top;
+}
+footer > .container > .location > .social > a:nth-child(2) {
+    background-position: -46px top;
+}
+footer > .container > .location > .social > a:nth-child(3) {
+    background-position: -92px top;
+}
+footer > .container > .location > .social > a:hover:nth-child(1) {
+    background-position: left -46px;
+}
+footer > .container > .location > .social > a:hover:nth-child(2) {
+    background-position: -46px -46px;
+}
+footer > .container > .location > .social > a:hover:nth-child(3) {
+    background-position: -92px -46px;
+}
+
+.rights {
+    display: block;
+    text-align: center;
+    padding: 0 20px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 17px;
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="yodpro">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="content-language" content="pt" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="rating" content="General" />
+        <meta name="description" content="Contrate um Síndico Profissional e tenha mais tranquilidade para você e sua família!" />
+        <meta name="keywords" content="são paulo, bauru, síndico, yodpro, yod, pro, yod pro" />
+        <meta name="robots" content="index,follow" />
+        <meta name="author" content="A&A Tech" />
+        <meta name="language" content="pt-br" />
+        <meta name="title" content="A&A Tech" />
+        <meta name="copyright" content="2022 aeatech.com.br">
+        <meta property="og:title" content="Yod Pro Síndico" />
+        <meta property="og:description" content="Contrate um Síndico Profissional e tenha mais tranquilidade para você e sua família!" />
+        <meta property="og:image" content="//yodprosindico.com.br/assets/images/og-logo.png" />
+        <title>Yod Pro Síndico - Síndico Profissional</title>
+        <!-- Fontes -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+        <link href="assets/css/reset.css" rel="stylesheet">
+        <link href="assets/css/base.css" rel="stylesheet">
+        <link href="assets/css/responsive.css" rel="stylesheet">
+    </head>
+    <body ng-controller="app">
+        <!-- Loader -->
+        <div class="loader">
+            <img src="assets/images/og-logo.png" />
+        </div>
+        <!-- End Loader -->
+        <!-- Menu -->
+        <div class="menu">
+            <a href="javascript:;">X</a>
+            <ul>
+                <li ref="home">HOME</li>
+                <li ref="services">NOSSOS SERVIÇOS</li>
+                <li ref="advantages">DIFERENCIAIS</li>
+                <li ref="contact">CONTATO</li>
+            </ul>
+        </div>
+        <!-- End Menu -->
+        <!-- Header -->
+        <header class="home">
+            <!-- Top -->
+            <div class="top">
+                <img src="assets/images/logo.png" />
+                <div class="menu" id="menu">
+                    <div class="text">Menu</div>
+                    <div class="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            <!-- End top -->
+            <!-- Slider -->
+            <div class="header-slider">
+                <div class="item" ng-repeat="banner in website.banners" style="background: url('{{banner.image}}') no-repeat center center / cover;">
+                    <div class="caption">
+                        <div ng-bind-html="banner.description"></div>
+                        <a href="javascript:;">Entre em contato</a>
+                    </div>
+                </div>
+            </div>
+            <!-- End Slider -->
+            <div class="white">
+                <img src="assets/images/header-white.png" width="100%" />
+            </div>
+        </header>
+        <!-- End Header -->
+
+        <!-- Services -->
+        <div class="services container">
+            <div class="title">Nossos serviços</div>
+            <div class="services-carousel">
+                <div ng-repeat="service in website.services" class="item">
+                    {{service.description}}
+                </div>
+            </div>
+        </div>
+        <!-- End Services -->
+
+        <!-- Why -->
+        <div class="why container">
+            <div class="text">
+                <div class="title">Porque contratar um Síndico Profissional</div>
+                <p>A busca por síndicos profissionais aumentou muito nos últimos anos e os principais motivos para o aumento desse tipo de serviço são a falta de interesse e de disponibilidade dos moradores para exercer a função de síndico. Para uma boa gestão é necessário que a pessoa escolhida para realizar a função de síndico tenha uma boa capacidade de soluções de conflito e conhecimentos técnicos da área.</p>
+                <p>Somos prestadores de serviços capacitados para exercer da melhor maneira possível a função de síndico. A contratação de um síndico profissional para o condomínio oferece muitas vantagens.</p>
+            </div>
+        </div>
+        <!-- End Why-->
+
+        <!-- Advantages -->
+        <div class="advantages">
+            <div class="container">
+                <div class="advantages-slider">
+                    <div class="item" ng-repeat="advantage in website.advantages">
+                        <img src="{{advantage.image}}" />
+                        <div class="title">{{advantage.title}}</div>
+                        <p>{{advantage.description}}</p>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <!-- End Advantages -->
+
+        <!-- Contact -->
+        <div class="contact">
+            <div class="container">
+                <div class="title">Entre em contato</div>
+                <form name="contact" id="contact">
+                    <ul>
+                        <li>
+                            <input type="text" name="nome" ng-model="contato.nome" placeholder=" " />
+                            <label for="nome">Seu nome</label>
+                        </li>
+                        <li>
+                            <input type="text" name="condominio" ng-model="contato.condominio" placeholder=" " />
+                            <label for="condominio">Nome do seu condomínio</label>
+                        </li>
+                        <li>
+                            <input type="tel" name="whatsapp" ng-model="contato.whatsapp" ui-mask="{{'(99) 99999-9999'}}" placeholder=" " />
+                            <label for="whatsapp">Whatsapp</label>
+                        </li>
+                        <li>
+                            <input type="text" name="mensagem" ng-model="contato.mensagem" placeholder=" " />
+                            <label for="mensagem">Deixe alguma observação (opcional)</label>
+                        </li>
+                        <li class="button" ng-click="send();">Enviar</li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+        <!-- End Contact -->
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="text">
+                    <div class="title">Missão</div>
+                    <p>Profissionalizar a gestão do condomínio e a representação perante os condôminos, colaboradores e fornecedores, a fim, de otimizar os resultados e reduzir as despesas exercendo maior controle financeiro e orçamentário sobre o fluxo de caixa, tendo em vista, a valorização do patrimônio em comum e a permanência da harmonia entre a comunidade local.</p>
+                </div>
+                <div class="location">
+                    <div class="title">Onde estamos</div>
+                    <ul>
+                        <li>Sede em Bauru/SP</li>
+                        <li>+55 14 99745-9283</li>
+                        <li>contato@yodprosindico.com.br</li>
+                    </ul>
+                    <div class="social">
+                        <a href="javascript:;">Facebook Yod Pro Síndico</a>
+                        <a href="javascript:;">Twitter Yod Pro Síndico</a>
+                        <a href="javascript:;">Instagram Yod Pro Síndico</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End Footer -->
+
+        <!-- Rights -->
+        <div class="rights">© 2022 Todos os direitos reservados. Yod Pro Síndico.</div>
+        <!-- End Rights -->
+
+        <!-- Scripts -->
+        <script type="text/javascript" src="assets/js/angular.min.js"></script>
+        <script type="text/javascript" src="assets/js/mask.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.bxslider.min.js"></script>
+        <script type="text/javascript" src="assets/js/app.js"></script>
+    </body>
+</html>

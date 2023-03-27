@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+@media only screen and (max-width: 768px) {
+    .bx-controls > .bx-controls-direction {
+        display: none;
+    }
+    header .header-slider > .item > .caption {
+        width: 100%;
+        max-width: 100%;
+        left: 0px;
+    }
+    header .header-slider > .item > .caption > * {
+        text-align: center;
+    }
+    header .header-slider > .item > .caption > h2 {
+        font-size: 50px;
+    }
+    header .header-slider > .item > .caption > h3 {
+        margin: 20px auto 0;
+    }
+    header .header-slider > .item > .caption > a {
+        float: none;
+        margin: 50px auto 0;
+        display: block;
+    }
+    header .header-slider > .item > .caption > a::after {
+        display: none;
+    }
+    .why::before {
+        display: none;
+    }
+    .why > .text {
+        width: 100%;
+        left: 0;
+    }
+    .contact::before {
+        width: 100%;
+    }
+    .contact::after {
+        display: none;
+    }
+    .contact > .container > form > ul {
+        max-width: 100%;
+    }
+    .contact > .container > form > ul > li > label {
+        font-size: 15px;
+    }
+    .contact > .container > form > ul > li.button {
+        max-width: 100%;
+    }
+    footer > .container {
+        display: block;
+    }
+    footer > .container > .text {
+        text-align: center;
+        max-width: 100%;
+        margin-bottom: 50px;
+        margin-right: 0;
+    }
+    footer > .container > .location {
+        max-width: 400px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-align: center;
+    }
+    footer > .container > .location > .social {
+        margin: 0 auto;
+        max-width: 158px;
+    }
+}
